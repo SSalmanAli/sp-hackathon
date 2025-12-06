@@ -1,55 +1,56 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: None (initial) → 1.0.0
+Modified principles:
+  - PRINCIPLE_1_NAME → Actionable Learning
+  - PRINCIPLE_2_NAME → Builder's Voice
+  - PRINCIPLE_3_NAME → Structured Accuracy
+  - PRINCIPLE_4_NAME → Embodied AI Focus
+  - PRINCIPLE_5_NAME → Audience Engagement
+  - PRINCIPLE_6_NAME → Practicality First
+Added sections:
+  - Content Standards
+  - Writing Process
+Removed sections: None
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ⚠ pending
+  - .specify/templates/spec-template.md: ⚠ pending
+  - .specify/templates/tasks-template.md: ⚠ pending
+  - .specify/templates/commands/*.md: ✅ updated (no files found)
+Follow-up TODOs: None
+-->
+# Physical AI Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Actionable Learning
+Every concept and explanation must directly enable readers to build and test Physical AI systems. Content must be implementation-ready, featuring simple explanations, progressive depth, real-world examples, diagrams, exercises, and small projects.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Builder's Voice
+Maintain a confident, no-fluff, Brad-style builder voice. Avoid academic jargon to ensure accessibility for beginner-to-intermediate readers.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Structured Accuracy
+Produce accurate, structured Markdown that is easy for RAG systems to chunk. Prioritize technical truthfulness and avoid hallucinating hardware.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Embodied AI Focus
+Every concept must tie directly to embodied AI, covering sensors, actuators, robots, perception, and control. This ensures a practical focus on real Physical AI systems.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Audience Engagement
+Content must serve beginners without boring intermediates, fostering a trustworthy reference for a broad audience of makers, students, hobbyists, engineers, educators, and AI-powered retrieval tools.
 
-### [PRINCIPLE_6_NAME]
+### VI. Practicality First
+Always think like a builder, staying practical and ensuring every chapter is actionable and implementation-ready.
 
+## Content Standards
 
-[PRINCIPLE__DESCRIPTION]
+Content must be free of academic jargon. All hardware references must be real and verifiable; no hallucinated hardware. Every concept must link directly to embodied AI components: sensors, actuators, robots, perception, and control. Focus on simple, clear explanations that gradually increase in depth, supported by practical examples, diagrams, exercises, and small projects.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Writing Process
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Chapters should be designed to be actionable and implementation-ready. Content should be structured for easy consumption by both human readers and RAG systems, ensuring clear chunking and discoverability. Continuous review to ensure content serves beginners effectively while remaining engaging for intermediate readers.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution establishes the foundational principles and guidelines for the "Physical AI" book. All content creation, editing, and review processes must adhere to these principles. Amendments to this constitution require a documented rationale and a consensus among the authoring intelligence and human collaborators. Regular reviews will be conducted to ensure ongoing compliance and the continued delivery of high-quality, actionable content.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06

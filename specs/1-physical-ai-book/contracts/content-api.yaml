@@ -1,0 +1,69 @@
+# Content API Contract
+
+This contract defines the interface for content management and retrieval in the Physical AI book Docusaurus site.
+
+## Content Retrieval Endpoints
+
+### GET /api/content/module/{moduleId}
+Retrieve module information including lessons and metadata.
+
+**Response**:
+```json
+{
+  "id": "module-1-ros2",
+  "title": "ROS 2 Fundamentals and Robot Modeling",
+  "description": "Introduction to Robot Operating System 2...",
+  "learningOutcomes": ["Understand ROS 2 architecture...", ...],
+  "lessons": [
+    {
+      "id": "lesson-1-1",
+      "title": "ROS 2 Architecture and Communication",
+      "description": "Understanding ROS 2 nodes, topics, services...",
+      "order": 1
+    }
+  ],
+  "order": 1
+}
+```
+
+### GET /api/content/lesson/{lessonId}
+Retrieve detailed lesson information.
+
+**Response**:
+```json
+{
+  "id": "lesson-1-1",
+  "title": "ROS 2 Architecture and Communication",
+  "description": "Understanding ROS 2 nodes, topics, services...",
+  "moduleId": "module-1-ros2",
+  "buildOutcome": "Simple publisher-subscriber system...",
+  "requiredTools": ["ROS 2 (Humble Hawksbill)", "Python 3.8+", "rclpy"],
+  "focus": "Implementing communication patterns...",
+  "order": 1,
+  "prerequisites": []
+}
+```
+
+### GET /api/content/search
+Search across all content with full-text search capabilities.
+
+**Query Parameters**:
+- q: search query
+- limit: number of results (default 10)
+- type: content type filter (module, lesson, asset)
+
+**Response**:
+```json
+{
+  "results": [
+    {
+      "id": "lesson-1-1",
+      "title": "ROS 2 Architecture and Communication",
+      "type": "lesson",
+      "preview": "Understanding ROS 2 nodes, topics...",
+      "url": "/docs/module-1-ros2/lesson-1-1-ros2-architecture"
+    }
+  ],
+  "total": 1
+}
+```
