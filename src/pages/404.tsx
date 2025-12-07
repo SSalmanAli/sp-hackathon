@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './404.module.css';
 
-export default function NotFound(): JSX.Element {
+export default function NotFound() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout title={`Page Not Found | ${siteConfig.title}`} description="Page not found">
