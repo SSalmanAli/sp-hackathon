@@ -8,15 +8,15 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io',
+  url: 'https://SSalmanAli.github.io',
   // Set the /<base>/ pathname under which your site is served
   // For GitHub Pages, this is usually /<project-name>/
-  baseUrl: '/physical-ai-book/',
+  baseUrl: '/sp-hackathon/',
 
   // GitHub pages deployment config.
-  organizationName: 'your-username',
-  projectName: 'physical-ai-book', // Usually your repo name.
-  deploymentBranch: 'gh-pages', // Branch that GitHub Pages will deploy from.
+  organizationName: 'SSalmanAli',
+  projectName: 'sp-hackathon', // Usually your repo name.
+  deploymentBranch: 'master', // Branch that GitHub Pages will deploy from.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -30,7 +30,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-username/physical-ai-book/edit/main/',
+            'https://github.com/SSalmanAli/sp-hackathon/edit/main/',
         },
         blog: false,
         theme: {
