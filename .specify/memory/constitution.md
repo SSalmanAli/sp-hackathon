@@ -1,22 +1,16 @@
 <!--
 Sync Impact Report:
-Version change: None (initial) → 1.0.0
-Modified principles:
-  - PRINCIPLE_1_NAME → Actionable Learning
-  - PRINCIPLE_2_NAME → Builder's Voice
-  - PRINCIPLE_3_NAME → Structured Accuracy
-  - PRINCIPLE_4_NAME → Embodied AI Focus
-  - PRINCIPLE_5_NAME → Audience Engagement
-  - PRINCIPLE_6_NAME → Practicality First
+Version change: 1.2.0 → 1.3.0
+Modified principles: None
 Added sections:
-  - Content Standards
-  - Writing Process
+  - IX. Interactive Chat Support Modal
+  - Chat Support UI Standards
 Removed sections: None
 Templates requiring updates:
   - .specify/templates/plan-template.md: ⚠ pending
   - .specify/templates/spec-template.md: ⚠ pending
   - .specify/templates/tasks-template.md: ⚠ pending
-  - .specify/templates/commands/*.md: ✅ updated (no files found)
+  - .specify/templates/commands/*.md: ⚠ pending
 Follow-up TODOs: None
 -->
 # Physical AI Book Constitution
@@ -41,9 +35,56 @@ Content must serve beginners without boring intermediates, fostering a trustwort
 ### VI. Practicality First
 Always think like a builder, staying practical and ensuring every chapter is actionable and implementation-ready.
 
+## UI/UX Principles
+
+### VII. YouTube-Inspired Color Scheme
+The user interface must feature the distinctive YouTube color scheme of red (#FF0000), white (#FFFFFF), and black (#000000) to create a recognizable and high-contrast visual identity. The primary color should be red for key interactive elements and branding, white for backgrounds and text contrast, and black for text and accent elements to ensure maximum readability and visual impact.
+
+### VIII. Structured Information Architecture
+The landing page must follow a logical information flow with clearly defined sections: Hero section for immediate impact, Overview section for quick understanding, Learning Outcomes section for value proposition, and Features section for detailed benefits.
+
+### IX. Interactive Chat Support Modal
+The user interface must include a floating chat button that opens a chat modal for AI-powered support. The chat modal must be easily accessible, visually distinct, and provide immediate assistance to users about the book content. The modal must close when clicked outside the container to ensure intuitive user interaction.
+
+## Landing Page Structure
+
+The Docusaurus landing page must include the following sections in order:
+
+1. **Hero Section**: A visually striking header with the main title, tagline, and primary call-to-action button
+2. **Overview Section**: A quick summary of the book's purpose and value proposition
+3. **Learning Outcomes Section**: Clear information about what users will master and learn
+4. **Features Section**: Detailed features and benefits of the content
+
 ## Content Standards
 
 Content must be free of academic jargon. All hardware references must be real and verifiable; no hallucinated hardware. Every concept must link directly to embodied AI components: sensors, actuators, robots, perception, and control. Focus on simple, clear explanations that gradually increase in depth, supported by practical examples, diagrams, exercises, and small projects.
+
+## Visual Design Standards
+
+The visual design must follow these guidelines:
+- Use the YouTube-inspired color scheme of red (#FF0000), white (#FFFFFF), and black (#000000) for high contrast and visual impact
+- Implement sleek, modern styling with clean lines and ample whitespace
+- Ensure responsive design works across all device sizes
+- Maintain consistent typography with clear visual hierarchy
+- Use red as the primary color for interactive elements, buttons, and key highlights
+- Use white for backgrounds and content areas to ensure readability
+- Use black for primary text and important accent elements
+- Include clear and compelling call-to-action buttons using the red color
+
+## Chat Support UI Standards
+
+The chat support modal must adhere to these UI standards:
+- Implement as a floating action button (FAB) positioned in the bottom-right corner of the screen
+- Use a distinctive icon (speech bubble or chat bubble) with the primary red color
+- The modal container must have a clean, modern design with the YouTube-inspired color scheme
+- Include a header with "AI Assistant" or "Book Support" title
+- Implement a message history area with alternating message bubbles for user and AI messages
+- Include an input area with a text field and send button
+- Add a subtle backdrop overlay that closes the modal when clicked
+- Ensure the modal has proper z-index to appear above other content
+- Implement smooth open/close animations for better user experience
+- Make the modal responsive and usable on all device sizes
+- Include a close button (X) in the top-right corner of the modal as an alternative closing method
 
 ## Writing Process
 
@@ -53,4 +94,4 @@ Chapters should be designed to be actionable and implementation-ready. Content s
 
 This constitution establishes the foundational principles and guidelines for the "Physical AI" book. All content creation, editing, and review processes must adhere to these principles. Amendments to this constitution require a documented rationale and a consensus among the authoring intelligence and human collaborators. Regular reviews will be conducted to ensure ongoing compliance and the continued delivery of high-quality, actionable content.
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
+**Version**: 1.3.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-10

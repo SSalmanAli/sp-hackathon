@@ -1,0 +1,237 @@
+/* src/components/ChatModal/ChatModal.module.css */
+/* Base styling for the chat modal component */
+
+.chatModal {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 380px;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: modalAppear 0.3s ease-out forwards;
+}
+
+.chatModal.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@keyframes modalAppear {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes modalDisappear {
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: backdropAppear 0.3s ease-out forwards;
+}
+
+.backdrop.hidden {
+  animation: backdropDisappear 0.3s ease-out forwards;
+}
+
+@keyframes backdropAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropDisappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .chatModal {
+    width: calc(100% - 40px);
+    height: 60vh;
+    max-height: 500px;
+    bottom: 90px;
+    right: 10px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatModal {
+    width: calc(100% - 20px);
+    height: 50vh;
+    bottom: 80px;
+    right: 10px;
+    left: 10px;
+    border-radius: 8px;
+  }
+}
+
+.chatModalHeader {
+  background-color: #FF0000; /* YouTube red */
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatModalTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  opacity: 0.8;
+}
+
+.chatModalBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: #FF0000; /* YouTube red */
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.aiMessage {
+  align-self: flex-start;
+  background-color: #e5e5ea;
+  color: #000;
+  border-bottom-left-radius: 4px;
+}
+
+.chatModalFooter {
+  padding: 12px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 8px;
+}
+
+.inputField {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputField:focus {
+  border-color: #FF0000; /* YouTube red */
+}
+
+.sendButton {
+  background-color: #FF0000; /* YouTube red */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+  background-color: #cc0000;
+}
+
+.sendButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.loadingIndicator {
+  align-self: flex-start;
+  padding: 10px 14px;
+  font-style: italic;
+  color: #666;
+}
