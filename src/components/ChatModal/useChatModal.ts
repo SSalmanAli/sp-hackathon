@@ -36,7 +36,7 @@ export const useChatModal = () => {
     setIsOpen(false);
   }, []);
 
-  const sendMessage = useCallback((content: string) => {
+  const sendMessage = useCallback(async (content: string) => {
     if (!content.trim()) return;
 
     const userMessage: Message = {
@@ -50,19 +50,51 @@ export const useChatModal = () => {
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
 
-    // Simulate AI response after a short delay
+    // Call the backend API
     setIsLoading(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/chat/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query_text: content,
+          timestamp: new Date().toISOString()
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
       const aiMessage: Message = {
         id: `ai-${Date.now()}`,
-        content: `I received your message: "${content}". This is a simulated response from the AI assistant about the Physical AI Book content. In a real implementation, this would connect to an actual AI service.`,
+        content: data.response_text || "I'm sorry, I couldn't generate a response.",
         sender: 'ai',
         timestamp: new Date(),
         status: 'delivered'
       };
+
       setMessages(prev => [...prev, aiMessage]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+
+      const errorMessage: Message = {
+        id: `err-${Date.now()}`,
+        content: "I'm sorry, I'm having trouble connecting to the server. Please ensure the backend is running.",
+        sender: 'ai',
+        timestamp: new Date(),
+        status: 'error'
+      };
+
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   }, []);
 
   const handleInputChange = useCallback((value: string) => {

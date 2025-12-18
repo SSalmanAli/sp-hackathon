@@ -1,10 +1,9 @@
 <!--
 Sync Impact Report:
-Version change: 1.2.0 → 1.3.0
+Version change: 1.4.0 → 1.5.0
 Modified principles: None
 Added sections:
-  - IX. Interactive Chat Support Modal
-  - Chat Support UI Standards
+  - XI. AI Answering Agent as First-Class Capability
 Removed sections: None
 Templates requiring updates:
   - .specify/templates/plan-template.md: ⚠ pending
@@ -45,6 +44,14 @@ The landing page must follow a logical information flow with clearly defined sec
 
 ### IX. Interactive Chat Support Modal
 The user interface must include a floating chat button that opens a chat modal for AI-powered support. The chat modal must be easily accessible, visually distinct, and provide immediate assistance to users about the book content. The modal must close when clicked outside the container to ensure intuitive user interaction.
+
+## RAG Architecture Principles
+
+### X. Data Retrieval as First-Class Capability
+The system must treat Data Retrieval as a first-class, independent capability within the Physical AI Book RAG architecture. Retrieval responsibilities are strictly limited to semantic search and must never include prompt construction, LLM generation, or UI logic. The retrieval process must embed user queries using the same Cohere embedding model used during indexing, query the existing Qdrant vector database, apply relevance scoring and similarity thresholds, and return only the most relevant content chunks. All retrieved results must be deduplicated, relevance-sorted, and returned with complete metadata, including module, lesson, section, and chunk identifiers. Retrieval outputs must be deterministic, accurate, and optimized for downstream RAG consumption, with clear structure and minimal noise. The system must prioritize correctness, traceability, and production readiness, ensuring retrieval can be independently validated and reused by higher-level agents without modification.
+
+### XI. AI Answering Agent as First-Class Capability
+The system must include an AI Answering Agent responsible solely for reasoning over provided context and responding to user queries within the Physical AI Book chatbot. This agent must be implemented using the OpenAI SDK configured with a Gemini-compatible API key and must strictly follow tool-augmented reasoning. The agent is not permitted to retrieve raw data directly; instead, it must rely on an explicit Content Extraction tool provided to it, which returns structured book content or user-selected text. The agent must always prefer tool usage when context is required and must never hallucinate content outside the extracted results. All responses must be grounded exclusively in tool-provided context, clearly structured, and suitable for direct rendering in the chatbot UI. If the extracted content does not contain the answer, the agent must explicitly state that the information is not available in the book. The agent must maintain deterministic, explainable behavior, respect UI constraints, and remain modular.
 
 ## Landing Page Structure
 
@@ -94,4 +101,4 @@ Chapters should be designed to be actionable and implementation-ready. Content s
 
 This constitution establishes the foundational principles and guidelines for the "Physical AI" book. All content creation, editing, and review processes must adhere to these principles. Amendments to this constitution require a documented rationale and a consensus among the authoring intelligence and human collaborators. Regular reviews will be conducted to ensure ongoing compliance and the continued delivery of high-quality, actionable content.
 
-**Version**: 1.3.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-10
+**Version**: 1.5.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-17

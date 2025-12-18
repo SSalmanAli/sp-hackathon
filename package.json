@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "docusaurus start",
+    "start:backend": "cd backend && python -m src.api.main",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -25,7 +27,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "3.1.0",
-    "@docusaurus/types": "3.1.0"
+    "@docusaurus/types": "3.1.0",
+    "concurrently": "^9.2.1"
   },
   "browserslist": {
     "production": [
